@@ -34,9 +34,9 @@ For help, try this [link](https://phoenixnap.com/kb/install-pip-windows).
 
 For Jupyter Notebook and Google Colab, running the following code should install the missing plug-ins:
 
-!pip install yfinance
+`!pip install yfinance`
 
-!pip install yahoo_fin
+`!pip install yahoo_fin`
 ## Features
 The program starts with the main menu which gives the user a complete overview of currency, date, market status, portfolio value, available cash and the programming functions which are explained in more detail in the following. From every point of the program, the user is always able to return to the main menu.<br><br>
 
