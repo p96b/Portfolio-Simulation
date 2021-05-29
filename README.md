@@ -1,6 +1,6 @@
 # Trading Platform Simulation
-## Project description
-Group Project - Simulation of a trading platform: In this simulation, the user can trade stocks of US-listed companies and cryptocurrencies while using real-life prices. The program has many different functions which all revolve around the trading experience.
+## Overview
+Group Project - Simulation of a trading platform: In this simulation, the user can trade stocks of US-listed (NASDAQ, NYSE etc.) companies and cryptocurrencies while using real-life prices. The program has many different functions which all revolve around the trading experience.
 
 The user starts with a self-defined amount of money, which can be used to buy a variety of different stocks or cryptocurrencies. During market hours, the prices shown are real-time, which enables a true trading experience with virtual money. Yet, unlike in real-life, the user can also make trades outside of market hours.
 
@@ -10,56 +10,59 @@ The user can keep track of his portfolio development over time, as an entry of t
 
 Furthermore, the user can add cash to his account at any time, should funds run low at some point. In the same way, it is also possible to reset the portfolio and start anew with an empty portfolio. If there should be any question with regards to some of the program’s functions, it also contains a help section of the most important tools. Reading this section is recommended before starting to trade.
 ## Project description
-The code for this trading platform simulation tool was written by Niklas Wellmanns (20-602-587), Christopher Siegrist (18-618-819), Juliette Kuich (19-615-913), Lukas Stiefel (18-619-478) and Prisca Beutler (16-657-330) for the group project in the course "Skills: Programming - Introduction Level" respectively "Skills: Programming with Advanced Computer Languages" supervised by Dr. Mario Silic at the University of St.Gallen (HSG). 
+The code for this trading platform simulation tool was written by Niklas Wellmanns (20-602-587), Christopher Siegrist (18-618-819), Juliette Kuich (19-615-913), Lukas Stiefel (18-619-478) and Prisca Beutler (16-657-330) for the group project in the course "Skills: Programming - Introduction Level" respectively "Skills: Programming with Advanced Computer Languages" supervised by Dr. Mario Silic at the University of St.Gallen (HSG).  
 
-The coding was done using the Python programming language and uses a variety of libraries and modules, such as the [Pandas Library](https://pandas.pydata.org/), the [Yahoo! Finance market data downloader](https://pypi.org/project/yfinance/), [matplotlib](https://matplotlib.org/) and the [pickle module](https://docs.python.org/3/library/pickle.html).
+The coding was done using the Python programming language and uses a variety of libraries and modules, such as the [Pandas Library](https://pandas.pydata.org/), the [Yahoo! Finance market data downloader](https://pypi.org/project/yfinance/), [matplotlib](https://matplotlib.org/) or the [pickle module](https://docs.python.org/3/library/pickle.html).
 
-Most information of this program is stored in pandas dataframes, which are subsequently exported into CSV files to enable the saving of key data after exiting the program and being able to continue at a later stage with the same information.
+Most information of this program is stored in pandas dataframes, which are subsequently exported into CSV files to enable the saving of key data after exiting the program and being able to continue at a later stage with the same information. The available cash amount is stored in a pickle file (cash.pk) and updated every time the user completes a buy or sell function.
 
-The code was written and tested for functionality in Jupyter Notebook, which was recommended by the Professor during the course’s individual tasks.
-
-We strongly recommend using Jupyter Notebook, but limited testing was also performed using Google Colab and Thonny. Execution using repl.it was rather cumbersome.
+The code was written and tested for functionality in Jupyter Notebook. We strongly recommend using Jupyter Notebook, but limited testing was also performed using Google Colab and Thonny. Execution using repl.it was rather cumbersome.
 ## Starting the application
-To start the application please download the Code File (“Stock_Simulation.ipynb” for Jupyter Notebook and Google Colab users and “Stock_Simulation.py” for other IDE), the two CSV files (“Tickers.csv” and “Portfoliovalues.csv”), and the pickle file “cash.pk” and save them in the same folder.
+To start the application please download the Code File (“Stock_Simulation.ipynb” for Jupyter Notebook and Google Colab users and “Stock_Simulation.py” for other IDE), and the two CSV files (“Tickers.csv” and “Portfoliovalues.csv”) and save them in the same folder.
 
-For the sake of judging our project, we provided two sets of the above-mentioned files. One set is completely empty and allows the user to start from zero. The other set is prefilled with a portfolio of different stocks. Certain functions, such as the historical performance line chart only make sense if the portfolio was held for some time (i.e., there are already data points available) and we want to pre-empt any constraints that could arise during the evaluation of the project and the Professor’s time. In simple terms, we want to avoid that that the program has to be used for several days in order to see all available functions.
-
-However, the portfolio can be reset at any time using the function in the main menu. This function wipes the CSV files and deletes the cash.pk file, which will then be re-created once the user starts the code again. 
-
-To summarize:
--	Save the Tickers_filled.csv and Portfoliovalues_filled.csv and cash.pk if you want to start with the pre-existing portfolio --> use the reset function in the main menu to start from zero
--	Save the empty Tickers.csv and Portfolio_values.csv (without the cash.pk!) if you want to start from zero directly
+For the sake of testing all available functions of our program, we provided a pre-existing portfolio. Certain functions, such as the historical performance line chart only make sense if the portfolio was held for some time (i.e., there are already data points available). In simple terms, we want to avoid that that the program must be used for several days in order to see all available functions. However, the portfolio can be reset at any time using the function in the main menu if you want to start form zero. This function wipes the CSV files and deletes the cash.pk file, which will then be re-created once the user starts the code again. 
 
 Depending on your IDE you might need to install [Pandas Library](https://pandas.pydata.org/), [matplotlib](https://matplotlib.org/), and the [pickle module](https://docs.python.org/3/library/pickle.html) (most of them should be readily installed and only need to be imported). 
 
 Before you can run the code in an IDE such as Jupyter Notebook you first need to install the following plug-ins:
--	Yahoo! Finance market data downloader --> [click here](https://pypi.org/project/yahoo-fin/)
--	[Yahoo Finance API](http://theautomatic.net/yahoo_fin-documentation/) --> [click here](https://pypi.org/project/yfinance/)
--	Requests-HTML --> [click here](https://docs.python-requests.org/projects/requests-html/en/latest/)
+-	[Yahoo! Finance market data downloader](https://pypi.org/project/yahoo-fin/)
+-	[Yahoo Finance API](https://pypi.org/project/yfinance/) 
+-	[Requests-HTML](https://docs.python-requests.org/projects/requests-html/en/latest/)
 
 These plug-ins should be easily installable using your CMD or terminal function. 
-For help, try this link: https://phoenixnap.com/kb/install-pip-windows
+For help, try this [link](https://phoenixnap.com/kb/install-pip-windows).
 
+For Jupyter Notebook and Google Colab, running the following code should install the missing plug-ins:
+
+!pip install yfinance
+
+!pip install yahoo_fin
 ## Features
-The program starts with the main menu which gives the user a complete overview of currency, date, market status, portfolio value, available cash and the programming functions which are explained in more detail in the following. From every point of the program, the user is always able to return to the main menu.
+The program starts with the main menu which gives the user a complete overview of currency, date, market status, portfolio value, available cash and the programming functions which are explained in more detail in the following. From every point of the program, the user is always able to return to the main menu.<br><br>
 
-In the price finder the user enters a ticker and the program searches on the yahoo_fin module for the live price of this stock and prints it. This is possible for any US listed company or cryptocurrency. 
+In the price finder the user enters a ticker and the program searches on the yahoo_fin module for the live price of this stock and prints it. This is possible for any US listed company or cryptocurrency. <br><br>
 
-In the buy function the user can buy shares of publicly listed companies or cryptocurrencies as long as he has enough available cash. After entering a valid ticker, the current price of the company will be displayed and the user can insert the dollar value he wants to invest. Within the buy function it is also possible to do a short selling (sell stocks that are not held by the user) if there is speculation of falling prices. The user can do short selling by entering a negative dollar value during the buying process. Furthermore, the buy function shows the available cash as well as the current portfolio with its performance. It updates according to the CSV file or updates the CSV file after a purchase respectively. 
+In the buy function the user can buy shares of publicly listed companies or cryptocurrencies as long as he has enough available cash. After entering a valid ticker, the current price of the company will be displayed and the user can insert the dollar value he wants to invest. Within the buy function it is also possible to do a short selling (sell stocks that are not held by the user) if there is speculation of falling prices. The user can short sell by entering a negative dollar value during the buying process. Furthermore, the buy function shows the available cash as well as the current portfolio with its performance. It updates according to the CSV file or updates the CSV file after a purchase respectively. <br><br>
 
-With the sell function the user can sell shares which he holds in his portfolio. It is possible to sell a whole position or just a part. After the execution of a selling order the gain or loss of this respective position is displayed. Furthermore, the sell function updates the portfolio according to the CSV file respectively updates the CSV file after the execution of a selling order.
+With the sell function the user can sell shares which he holds in his portfolio. The user needs to enter the ticker of the stock he wants to sell. The program searches the portfolio for every position held of that ticker and displays these filtered positions in a separate table. This is necessary in case the user holds multiple positions in one company, but only wants to sell one specific one. Therefore, in the next step, the user is asked which position of all those held of the company he typed in previously belonging to the chosen company should be sold. The index of this second table presents the order numbers, which are the same as in the unfiltered portfolio.
 
-The section “refresh portfolio” updates the entire portfolio dataframe with the most recent stock prices and stores it right back into the CSV file. The user sees the updated values of his holdings. If the markets are closed it will disclaim that the user is outside of trading hours and the prices will reflect those at closing.
+By typing the order position, the user is then guided towards the choice of selling the entire position, or only a part of it. If the latter is chosen, he will be asked to specify the exact amount in dollars to sell. This will then be deducted accordingly from the portfolio, while the invested value and the profit/loss will be adjusted proportionally to the amount sold. After the execution of a selling order, the gain or loss of this respective position is displayed to the user. The dataframe is then stored in the CSV file.
 
-With the option “view portfolio” the user has several opportunities. He can ask for a table showing his current portfolio performance with non-realized profits and losses or a table showing the historic performance of the whole portfolio. Regarding graphs, there is the possibility to print a line chart to analyze the historic portfolio performance or a pie chart to look at the portfolio allocation. The daily portfolio performance is calculated based on the cumulative value of all positions multiplied by the most recent closing price. For every non-trading day the closing price of the previous trading day is used. 
+After typing in the desired order number, it is possible to sell the whole position at once or just a part of it. Depending on the type of the position (long or short), the user must sell (in a long position) or repurchase (in a short position) shares in order to close the trade and reap a profit (or incur a loss). It is not possible to repurchase shares in long position as this would be equivalent to another buy order, which needs to be executed in the specific buying menu. Equivalently, it is not possible to sell shares in a short position as this would represent another short sale process, which also should be performed in the buying menu.<br><br>
 
-The “restart portfolio” function allows the user to delete his current portfolio and reset everything to zero. The portfolio positions, all CSV files and the cash account will be deleted or emptied. After resetting, the user might have to restart the program. As soon as the program has been restarted the user will be asked to define the desired cash amount with which he wants to start over. 
+The section “refresh portfolio” updates the entire portfolio dataframe with the most recent stock prices and stores it right back into the CSV file. The user sees the updated values of his holdings. If the markets are closed it will disclaim that the user is outside of trading hours and the prices will reflect those at previous closing. <br><br>
 
-The function “add cash” gives the user the opportunity to increase the amount which he can use for his investments.
+With the option “view portfolio” the user has several opportunities. He can ask for a table showing his current portfolio performance with non-realized profits and losses or a table showing the historic performance of the whole portfolio since the first day of starting the program. The program makes an entry of the portfolio value every day it is opened. In case the user does not open the program for a specific time period, the portfolio values during these days are entered retrospectively based on the closing price of these days. In the same manner, the portfolio value on weekends (non-trading periods) is based on the closing prices of the previous trading day.
 
-There is a function to exit the program so that the user can ‘log-out’ of his account without having to manually interrupt the script.
+Regarding graphs, there is the possibility to print a line chart to analyze the historic portfolio performance or a pie chart to look at the portfolio allocation. The daily portfolio performance is calculated based on the cumulative value of all positions multiplied by the most recent closing price. For every non-trading day, the closing price of the previous trading day is used. The line chart’s meaningfulness increases with the number of days stored, so during the first few days of trading, the line’s meaning might be limited.<br><br>
 
-Last but not least, there is a help section with useful tips related to the price finder, the buy function, the sell function as well as about refreshing, viewing and restarting the portfolio.
+The “restart portfolio” function allows the user to delete his current portfolio and reset everything to zero. The portfolio positions, all CSV files and the cash account will be deleted or emptied. After resetting, the user must restart the program. As soon as the program has been restarted the user will be asked to define the desired cash amount with which he wants to start over. <br><br>
+
+The function “add cash” gives the user the opportunity to increase the cash amount which he can use for his investments.<br><br>
+
+There is a function to exit the program so that the user can ‘log-out’ of his account without having to manually interrupt the script.<br><br>
+
+Finally, there is a help section with useful tips related to the price finder, the buy function, the sell function as well as about refreshing, viewing and restarting the portfolio.<br><br>
 
 For further information and explanation have a look at the help section in the program or even at the comments in the code.
 ## Remarks
