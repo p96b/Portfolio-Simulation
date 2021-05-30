@@ -984,7 +984,7 @@ while True:
 
                     #Define the appearance and print
                     plt.style.use("bmh")
-                    fig1, ax1 = plt.subplots(figsize = (8,4))
+                    fig1, ax1 = plt.subplots(figsize = (12,7))
                     plt.title("Current Portfolio", pad=10, fontdict={'size':24})
                     ax1.pie(slices, labels=labels, startangle=90, autopct=make_autopct(slices),wedgeprops={"edgecolor":"black"})
                     ax1.axis('equal')
